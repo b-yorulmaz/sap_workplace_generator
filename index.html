@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP Workplace Generator - Enterprise Role Automation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>SAP Workplace Generator</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <button class="btn btn--primary" id="getStartedNav">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <section id="home" class="landing-page">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Automate SAP Role Generation</h1>
+                    <p class="hero-subtitle">Transform your SAP workplace setup with enterprise-grade automation. Reduce manual work by 90% and eliminate configuration errors.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Time Reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">€50K+</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Error Elimination</div>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary btn--hero" id="getStartedHero">Start Generating SAP Workplaces</button>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <h3>Generated Workplace</h3>
+                            <span class="status status--success">Active</span>
+                        </div>
+                        <div class="card-content">
+                            <p><strong>Employee:</strong> John Doe</p>
+                            <p><strong>Modules:</strong> MM, SD, FI</p>
+                            <p><strong>Roles:</strong> 12 Generated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Enterprise-Grade Automation</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Generate complete SAP workplaces in minutes, not hours. Automated role assignment based on TCODE analysis.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Precision Accuracy</h3>
+                        <p>Eliminate human errors with intelligent role mapping and validation. Perfect compliance every time.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Complete Reporting</h3>
+                        <p>Full audit trails, downloadable reports, and comprehensive workplace documentation.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔒</div>
+                        <h3>Enterprise Security</h3>
+                        <p>Built-in security validation and role segregation following SAP best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Application -->
+    <section id="app" class="main-app hidden">
+        <div class="container">
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Employee Info</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">SAP Modules</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">TCODEs</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Review & Generate</div>
+                </div>
+            </div>
+
+            <!-- Step 1: Employee Information -->
+            <div class="step-content active" id="step-1">
+                <div class="step-header">
+                    <h2>Employee Information</h2>
+                    <p>Enter the basic employee details for workplace generation</p>
+                </div>
+                <form id="employeeForm" class="employee-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="jobTitle">Job Title *</label>
+                            <input type="text" id="jobTitle" name="jobTitle" class="form-control" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label" for="address">Address</label>
+                            <textarea id="address" name="address" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="employeeNumber">Employee Number</label>
+                            <input type="text" id="employeeNumber" name="employeeNumber" class="form-control" readonly>
+                            <small class="form-text">Auto-generated 6-digit number</small>
+                        </div>
+                    </div>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn--primary" id="nextToModules">Next: Select Modules</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 2: SAP Modules -->
+            <div class="step-content" id="step-2">
+                <div class="step-header">
+                    <h2>SAP Modules Selection</h2>
+                    <p>Select the SAP modules this employee will work with</p>
+                </div>
+                <div class="modules-grid" id="modulesGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn--secondary" id="backToEmployee">Back</button>
+                    <button type="button" class="btn btn--primary" id="nextToTcodes">Next: Add TCODEs</button>
+                </div>
+            </div>
+
+            <!-- Step 3: TCODE Input -->
+            <div class="step-content" id="step-3">
+                <div class="step-header">
+                    <h2>TCODE Input</h2>
+                    <p>Add transaction codes via file upload or manual entry</p>
+                </div>
+                
+                <div class="tcode-input-methods">
+                    <div class="input-method">
+                        <h3>File Upload</h3>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-icon">📁</div>
+                            <p>Drag & drop CSV/Excel files here or click to browse</p>
+                            <input type="file" id="tcodeFile" accept=".csv,.xlsx,.xls" class="file-input">
+                            <button type="button" class="btn btn--outline" id="browseFile">Browse Files</button>
+                        </div>
+                    </div>
+                    
+                    <div class="input-method">
+                        <h3>Manual Entry</h3>
+                        <div class="manual-tcode-input">
+                            <div class="tcode-input-row">
+                                <input type="text" class="form-control tcode-input" placeholder="Enter TCODE (e.g., MM01)">
+                                <button type="button" class="btn btn--primary add-tcode-btn">Add</button>
+                            </div>
+                            <div class="tcode-list" id="tcodeList">
+                                <!-- TCODEs will be added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn--secondary" id="backToModules">Back</button>
+                    <button type="button" class="btn btn--primary" id="nextToReview">Next: Review & Generate</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Review & Generate -->
+            <div class="step-content" id="step-4">
+                <div class="step-header">
+                    <h2>Review & Generate</h2>
+                    <p>Review the workplace details and generate SAP roles</p>
+                </div>
+                
+                <div class="review-sections">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Employee Details</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="employeeReview"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Selected Modules</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="modulesReview"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Transaction Codes</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="tcodesReview"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn--secondary" id="backToTcodes">Back</button>
+                    <button type="button" class="btn btn--primary" id="generateWorkplace">Generate Workplace</button>
+                </div>
+            </div>
+
+            <!-- Success Results -->
+            <div class="step-content" id="step-success">
+                <div class="success-header">
+                    <div class="success-icon">✅</div>
+                    <h2>SAP Workplace Generated Successfully!</h2>
+                    <p>The employee workplace has been created with all necessary roles and permissions.</p>
+                </div>
+                
+                <div class="generated-roles" id="generatedRoles">
+                    <!-- Generated roles will be displayed here -->
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn--primary" id="createAnother">Create Another Workplace</button>
+                    <button type="button" class="btn btn--outline" id="downloadReport">Download Report</button>
+                    <button type="button" class="btn btn--secondary" id="backToHome">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Generating SAP workplace...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
